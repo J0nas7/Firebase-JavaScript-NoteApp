@@ -1,0 +1,141 @@
+*, html {
+    top: 0;
+    left: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #222;
+    font-family: Verdana, sans-serif;
+}
+
+.clrBth { clear: both; }
+.fltLft { float: left; }
+
+.windowBar {
+    width: 100%;
+    height: 45px;
+    float: left;
+    clear: both;
+    padding: 7px;
+    background: #4da969;
+}
+
+    .windowBar .btn {
+        min-width: 30px;
+        width: auto;
+        height: 30px;
+        background: #3a793a;
+        border: 0;
+        color: white;
+        padding: 5px;
+        display: block;
+        float: left;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+.noteList {
+    width: 15%;
+    height: calc(100vh - 45px);
+    background: #111;
+    float: left;
+    border-right: 1px #fff solid;
+    width: 100%;
+    left: -100%;
+    position: absolute;
+    top: 45px;
+    z-index: 1;
+    transition-duration: 1.5s;
+}
+    .noteList.toggle {
+        left: 0%;
+    }
+
+    .noteList h1 {
+        color: white;
+        float: left;
+        margin: 10px;
+    }
+
+    .noteList .num {
+        float: left;
+        color: white;
+        margin-top: 17px;
+    }
+
+    .noteList #theNotes {
+        clear: both
+    }
+
+    .aNote {
+        width: 100%;
+        padding: 10px;
+        height: auto;
+        float: left;
+        color: white;
+        cursor: pointer;
+        border-bottom: 1px #555 solid;
+    }
+
+        .aNote:hover {
+            background: #333;
+        }
+        .aNote.active {
+            background: #eaa119;
+        }
+
+        .aNote .nTitle {
+            font-size: 16px;
+            float: left;
+            clear: both;
+            display: block;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .aNote .nDate, .aNote .nContent {
+            font-size: 13px;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .aNote .nContent {
+            color: #928b8b;
+        }
+
+.showNote {
+    float: left;
+    width: 85%;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+    .noteTitle {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .noteDate {
+        color: grey;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .noteTitle, .noteDate {
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .noteContent {
+        width: 100%;
+        display: block;
+        color: white;
+        font-size: 15px;
+    }
