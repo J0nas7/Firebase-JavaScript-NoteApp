@@ -187,6 +187,18 @@ body {
         display: block;
     }
 
+    .noteList .searchField {
+        float: left;
+        clear: both;
+        width: 90%;
+        margin: 5px 5% 15px;
+        height: 25px;
+        background: #171819;
+        color: white;
+        padding: 5px;
+        outline: none;
+    }
+
     .noteList #theNotes {
         clear: both
     }

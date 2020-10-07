@@ -58,7 +58,16 @@ function updateNoteList() {
     noteArray.sort((a, b) => (b.date > a.date) ? 1 : -1);
     var theArray = noteArray;
     if (showFavs) {
-        theArray = noteArray.filter((note)=>(note.star == "yes"));
+        theArray = theArray.filter((note)=>(note.star == "yes"));
+    }
+    var searchTerm = document.getElementById("theSearch").value;
+    if (searchTerm) {
+        theArray = theArray.filter((note) => (
+                                                note.title.includes(searchTerm) || 
+                                                note.content.includes(searchTerm) || 
+                                                timestampToShortDate(note.date).includes(searchTerm) ||
+                                                timestampToReadableDate(note.date).includes(searchTerm)
+                                            ));
     }
     document.getElementById("noteListCount").innerHTML = "("+theArray.length+")";
     theArray.forEach((note) => {
@@ -169,7 +178,7 @@ document.getElementById("noteFavs").addEventListener("click", () => {
     updateNoteList();
 });
 
-// typing listener
+// TYPING LISTENERS
 let typingTimer;                //timer identifier
 let doneTypingInterval = 3500;  //time in ms (5 seconds)
 let listenTitle = document.getElementById('theNoteTitle');
@@ -196,3 +205,6 @@ function doneTyping () {
         createNote();
     }
 }
+
+// user is typing in the searchbox
+document.getElementById("theSearch").addEventListener('keyup', () => { updateNoteList(); });
