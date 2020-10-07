@@ -9,28 +9,40 @@
 </head>
 <body>
     <div class="topbar">
-        <span class="menuTrigger" id="menuTrigger">
-            <span class="hamburger" id="one"></span>
-            <span class="hamburger" id="two"></span>
-            <span class="hamburger" id="three"></span>
-            <span class="x" id="one"></span>
-            <span class="x" id="two"></span>
-        </span>
-        <!--<span class="btn" id="noteListTrigger">Notes</span>-->
+        <div class="sidemenu">
+            <span class="menuTrigger" id="menuTrigger">
+                <span class="hamburger" id="one"></span>
+                <span class="hamburger" id="two"></span>
+                <span class="hamburger" id="three"></span>
+                <span class="x" id="one"></span>
+                <span class="x" id="two"></span>
+            </span>
+            <span class="btn" id="newNote"><strong>+</strong> New note</span>
+        </div>
+        <div class="notemenu" id="notemenu">
+            <span class="btn" id="deleteNote">Delete note <strong>X</strong></span>
+            <span class="btn" id="toggleImportant">
+                <span id="unmarked">&#9734;</span>
+                <span id="marked">&#9733;</span>
+            </span>
+        </div>
     </div>
 
     <div class="noteList" id="noteList">
         <h1>Notes</h1>
-        <span class="num">(23)</span>
+        <span class="num" id="noteListCount">(0)</span>
+        <span class="favorites" id="noteFavs">&#9734;</span>
         <div class="notes" id="theNotes">
             
         </div>
     </div>
 
     <div class="showNote">
-        <span class="noteTitle" id="theNoteTitle">-</span>
-        <span class="noteDate" id="theNoteDate">-</span>
-        <span class="noteContent" id="theNoteContent">...</span>
+        <input class="noteId" id="theNoteId" value="" type="hidden" />
+        <input class="noteStar" id="theNoteStar" value="" type="hidden" />
+        <input class="noteTitle" id="theNoteTitle" value="" placeholder="Note title here" type="text" maxlength="60" />
+        <span class="noteDate" id="theNoteDate">today</span>
+        <textarea class="noteContent" id="theNoteContent" placeholder="Note content here..."></textarea>
     </div>
     <script src='main.js'></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
